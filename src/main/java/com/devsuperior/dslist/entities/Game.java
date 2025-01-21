@@ -117,7 +117,6 @@ public class Game {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        if (getClass() != o.getClass()) return false;
         Game other = (Game) o;
         return Objects.equals(id, other.id);
     }
