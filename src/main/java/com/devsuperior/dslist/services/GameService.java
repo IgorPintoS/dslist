@@ -3,6 +3,7 @@ package com.devsuperior.dslist.services;
 import com.devsuperior.dslist.DTO.GameDTO;
 import com.devsuperior.dslist.DTO.GameMinDTO;
 import com.devsuperior.dslist.entities.Game;
+import com.devsuperior.dslist.projections.GameMinProjection;
 import com.devsuperior.dslist.repositories.GameRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +35,11 @@ public class GameService {
         } else {
             throw new EntityNotFoundException("Jogo com o id: " + id + " não encontrado.");
         }
+    }
+
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long listId) {
+        List<GameMinProjection> result = gameRepository.searchByList(listId);
+        return result.stream().map(x -> new GameMinDTO(x)).toList();
     }
 }
