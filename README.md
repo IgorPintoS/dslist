@@ -61,4 +61,4 @@ O projeto foi estruturado em camadas para garantir a separação de responsabili
 * `GET /lists`: Retorna todas as listas de jogos.
 * `GET /lists/{listId}/games`: Retorna os jogos de uma lista específica.
 * `POST /lists/{listId}/games`: Move um jogo de uma posição para outra dentro de uma lista.
-![image](https://github.com/user-attachments/assets/728f0c07-5379-48f1-bbf6-60d0e60b824c)
+  
